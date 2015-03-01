@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextViewController" customModule="HolderTextViewTest" customModuleProvider="target">
+            <connections>
+                <outlet property="holderTextView" destination="CBs-On-IwG" id="wD2-rL-5RE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBs-On-IwG" customClass="HolderTextView" customModule="HolderTextViewTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="CBs-On-IwG" secondAttribute="bottom" constant="458" id="3Ea-oG-6QZ"/>
+                <constraint firstItem="CBs-On-IwG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="3UO-ZC-Jze"/>
+                <constraint firstItem="CBs-On-IwG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="135" id="61c-Qw-t8y"/>
+                <constraint firstAttribute="trailing" secondItem="CBs-On-IwG" secondAttribute="trailing" constant="35" id="zLj-zZ-6OT"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="CBs-On-IwG"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="3Ea-oG-6QZ"/>
+                    <exclude reference="3UO-ZC-Jze"/>
+                    <exclude reference="61c-Qw-t8y"/>
+                    <exclude reference="zLj-zZ-6OT"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="CBs-On-IwG"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="3Ea-oG-6QZ"/>
+                    <include reference="3UO-ZC-Jze"/>
+                    <include reference="61c-Qw-t8y"/>
+                    <include reference="zLj-zZ-6OT"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

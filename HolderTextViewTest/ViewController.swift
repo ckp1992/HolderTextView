@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+//    @IBOutlet weak var holderTextView: HolderTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        holderTextView.placeHolder = "阿迪发送到发送到"
+//        holderTextView.maxLength = 8
+//        
+//        var h = HolderTextView(frame: CGRectMake(0, 0, 0, 0))
+        //HolderTextView.maxLength = 8
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,6 +27,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func click(sender: AnyObject) {
+        var vc = TextViewController(nibName: "TextViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 

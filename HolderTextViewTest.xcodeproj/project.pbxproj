@@ -13,6 +13,9 @@
 		7FE3E2441AA2BBDD00D8D69B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3E2431AA2BBDD00D8D69B /* Images.xcassets */; };
 		7FE3E2471AA2BBDD00D8D69B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3E2451AA2BBDD00D8D69B /* LaunchScreen.xib */; };
 		7FE3E2531AA2BBDD00D8D69B /* HolderTextViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3E2521AA2BBDD00D8D69B /* HolderTextViewTestTests.swift */; };
+		7FE3E2621AA2BC2500D8D69B /* HolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3E2611AA2BC2500D8D69B /* HolderTextView.swift */; };
+		7FE3E2651AA2E44E00D8D69B /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3E2631AA2E44E00D8D69B /* TextViewController.swift */; };
+		7FE3E2661AA2E44E00D8D69B /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3E2641AA2E44E00D8D69B /* TextViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		7FE3E24C1AA2BBDD00D8D69B /* HolderTextViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HolderTextViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE3E2511AA2BBDD00D8D69B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE3E2521AA2BBDD00D8D69B /* HolderTextViewTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderTextViewTestTests.swift; sourceTree = "<group>"; };
+		7FE3E2611AA2BC2500D8D69B /* HolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderTextView.swift; sourceTree = "<group>"; };
+		7FE3E2631AA2E44E00D8D69B /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		7FE3E2641AA2E44E00D8D69B /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,10 @@
 		7FE3E2391AA2BBDD00D8D69B /* HolderTextViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				7FE3E2601AA2BC2500D8D69B /* HolderTextView */,
 				7FE3E23C1AA2BBDD00D8D69B /* AppDelegate.swift */,
+				7FE3E2631AA2E44E00D8D69B /* TextViewController.swift */,
+				7FE3E2641AA2E44E00D8D69B /* TextViewController.xib */,
 				7FE3E23E1AA2BBDD00D8D69B /* ViewController.swift */,
 				7FE3E2401AA2BBDD00D8D69B /* Main.storyboard */,
 				7FE3E2431AA2BBDD00D8D69B /* Images.xcassets */,
@@ -110,6 +119,14 @@
 				7FE3E2511AA2BBDD00D8D69B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FE3E2601AA2BC2500D8D69B /* HolderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				7FE3E2611AA2BC2500D8D69B /* HolderTextView.swift */,
+			);
+			path = HolderTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +212,7 @@
 				7FE3E2421AA2BBDD00D8D69B /* Main.storyboard in Resources */,
 				7FE3E2471AA2BBDD00D8D69B /* LaunchScreen.xib in Resources */,
 				7FE3E2441AA2BBDD00D8D69B /* Images.xcassets in Resources */,
+				7FE3E2661AA2E44E00D8D69B /* TextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE3E2621AA2BC2500D8D69B /* HolderTextView.swift in Sources */,
 				7FE3E23F1AA2BBDD00D8D69B /* ViewController.swift in Sources */,
 				7FE3E23D1AA2BBDD00D8D69B /* AppDelegate.swift in Sources */,
+				7FE3E2651AA2E44E00D8D69B /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
