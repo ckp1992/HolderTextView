@@ -28,6 +28,23 @@ class HolderTextView: UITextView {
         }
     }
     
+    //针对语音输入和直接赋值 或者用 kvo实现
+    override var text: String! {
+        didSet{
+            if text.isEmpty {
+                placeHolderView.hidden = false
+            }else{
+                placeHolderView.hidden = true
+            }
+            
+            var toBeString = text as NSString
+            
+            if (toBeString.length > maxLength) {
+                text = toBeString.substringToIndex(maxLength)
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         initPlacHolderView()
