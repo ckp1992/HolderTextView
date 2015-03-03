@@ -69,19 +69,21 @@ extension HolderTextView {
         placeHolderView.backgroundColor = UIColor.clearColor()
         placeHolderView.userInteractionEnabled = false
         placeHolderView.font = self.font
-        self.delegate = self
         self.addSubview(placeHolderView)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textChanged:", name: UITextViewTextDidChangeNotification, object: nil)
     }
 }
 
-//MARK: -UITextViewDelegate
-extension HolderTextView : UITextViewDelegate{
+//MARK: -Notifications
+extension HolderTextView{
     
-    func textViewDidChange(textView: UITextView){
+    func textChanged(notification:NSNotification){
+        
+        var textView = notification.object as UITextView
         if textView.text.isEmpty {
             placeHolderView.hidden = false
         }else{
-             placeHolderView.hidden = true
+            placeHolderView.hidden = true
         }
         
         var toBeString = textView.text as NSString
@@ -89,5 +91,7 @@ extension HolderTextView : UITextViewDelegate{
         if (toBeString.length > maxLength) {
             textView.text = toBeString.substringToIndex(maxLength)
         }
+        
     }
+
 }
