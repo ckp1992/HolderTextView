@@ -9,7 +9,7 @@
 import UIKit
 
 class HolderTextView: UITextView {
-
+    
     private var placeHolderView : UITextView!
     private var initFlag : Bool = false
     var maxLength : Int = 140
@@ -69,17 +69,16 @@ extension HolderTextView {
         placeHolderView.backgroundColor = UIColor.clearColor()
         placeHolderView.userInteractionEnabled = false
         placeHolderView.font = self.font
+        self.delegate = self
         self.addSubview(placeHolderView)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textChanged:", name: UITextViewTextDidChangeNotification, object: nil)
+        
     }
 }
 
 //MARK: -Notifications
-extension HolderTextView{
-    
-    func textChanged(notification:NSNotification){
+extension HolderTextView:UITextViewDelegate{
+    func textViewDidChange(textView: UITextView){
         
-        var textView = notification.object as UITextView
         if textView.text.isEmpty {
             placeHolderView.hidden = false
         }else{
@@ -91,7 +90,6 @@ extension HolderTextView{
         if (toBeString.length > maxLength) {
             textView.text = toBeString.substringToIndex(maxLength)
         }
-        
     }
-
+    
 }

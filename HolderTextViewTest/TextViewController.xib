@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextViewController" customModule="HolderTextViewTest" customModuleProvider="target">
             <connections>
+                <outlet property="countLabel" destination="SaJ-4a-64I" id="F7r-pu-6c1"/>
                 <outlet property="holderTextView" destination="CBs-On-IwG" id="wD2-rL-5RE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,19 +22,48 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-4a-64I">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="OAb-pl-iY0"/>
+                        <constraint firstAttribute="width" constant="42" id="aEA-yj-QwJ">
+                            <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="OAb-pl-iY0"/>
+                            <exclude reference="aEA-yj-QwJ"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="OAb-pl-iY0"/>
+                            <include reference="aEA-yj-QwJ"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="CBs-On-IwG" secondAttribute="bottom" constant="458" id="3Ea-oG-6QZ"/>
                 <constraint firstItem="CBs-On-IwG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="3UO-ZC-Jze"/>
                 <constraint firstItem="CBs-On-IwG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="135" id="61c-Qw-t8y"/>
+                <constraint firstItem="SaJ-4a-64I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="A5r-p1-0Te"/>
+                <constraint firstItem="SaJ-4a-64I" firstAttribute="top" secondItem="CBs-On-IwG" secondAttribute="bottom" constant="47" id="t20-YU-ekN"/>
                 <constraint firstAttribute="trailing" secondItem="CBs-On-IwG" secondAttribute="trailing" constant="35" id="zLj-zZ-6OT"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="CBs-On-IwG"/>
+                    <exclude reference="SaJ-4a-64I"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="A5r-p1-0Te"/>
+                    <exclude reference="t20-YU-ekN"/>
                     <exclude reference="3Ea-oG-6QZ"/>
                     <exclude reference="3UO-ZC-Jze"/>
                     <exclude reference="61c-Qw-t8y"/>
@@ -43,8 +73,11 @@
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="CBs-On-IwG"/>
+                    <include reference="SaJ-4a-64I"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="A5r-p1-0Te"/>
+                    <include reference="t20-YU-ekN"/>
                     <include reference="3Ea-oG-6QZ"/>
                     <include reference="3UO-ZC-Jze"/>
                     <include reference="61c-Qw-t8y"/>

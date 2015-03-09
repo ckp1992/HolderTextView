@@ -11,6 +11,7 @@ import UIKit
 class TextViewController: UIViewController {
 
     @IBOutlet weak var holderTextView: HolderTextView!
+    @IBOutlet weak var countLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
