@@ -8,12 +8,16 @@
 
 import UIKit
 
+@objc protocol HolderTextViewDelegate {
+    optional func holderTextViewDidChange(textView:HolderTextView)
+}
+
 class HolderTextView: UITextView {
     
     private var placeHolderView : UITextView!
     private var initFlag : Bool = false
     var maxLength : Int = 140
-    
+    weak var holderTextViewDelegate: HolderTextViewDelegate?
     var placeHolder : String = "" {
         didSet{
             placeHolderView.text = placeHolder
@@ -90,6 +94,8 @@ extension HolderTextView:UITextViewDelegate{
         if (toBeString.length > maxLength) {
             textView.text = toBeString.substringToIndex(maxLength)
         }
+        holderTextViewDelegate?.holderTextViewDidChange!(textView as HolderTextView)
+        //holderTextViewDidChange(textView)
     }
     
 }

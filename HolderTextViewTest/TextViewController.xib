@@ -18,9 +18,22 @@
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBs-On-IwG" customClass="HolderTextView" customModule="HolderTextViewTest" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="207" id="lZo-43-LV7"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="lZo-43-LV7"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="lZo-43-LV7"/>
+                        </mask>
+                    </variation>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-4a-64I">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -49,25 +62,24 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="CBs-On-IwG" secondAttribute="bottom" constant="458" id="3Ea-oG-6QZ"/>
                 <constraint firstItem="CBs-On-IwG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="3UO-ZC-Jze"/>
-                <constraint firstItem="CBs-On-IwG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="135" id="61c-Qw-t8y"/>
                 <constraint firstItem="SaJ-4a-64I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="A5r-p1-0Te"/>
                 <constraint firstItem="SaJ-4a-64I" firstAttribute="top" secondItem="CBs-On-IwG" secondAttribute="bottom" constant="47" id="t20-YU-ekN"/>
+                <constraint firstItem="CBs-On-IwG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="135" id="ygs-YW-lRO"/>
                 <constraint firstAttribute="trailing" secondItem="CBs-On-IwG" secondAttribute="trailing" constant="35" id="zLj-zZ-6OT"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="CBs-On-IwG"/>
                     <exclude reference="SaJ-4a-64I"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="3UO-ZC-Jze"/>
+                    <exclude reference="ygs-YW-lRO"/>
+                    <exclude reference="zLj-zZ-6OT"/>
                     <exclude reference="A5r-p1-0Te"/>
                     <exclude reference="t20-YU-ekN"/>
-                    <exclude reference="3Ea-oG-6QZ"/>
-                    <exclude reference="3UO-ZC-Jze"/>
-                    <exclude reference="61c-Qw-t8y"/>
-                    <exclude reference="zLj-zZ-6OT"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -76,12 +88,11 @@
                     <include reference="SaJ-4a-64I"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="3UO-ZC-Jze"/>
+                    <include reference="ygs-YW-lRO"/>
+                    <include reference="zLj-zZ-6OT"/>
                     <include reference="A5r-p1-0Te"/>
                     <include reference="t20-YU-ekN"/>
-                    <include reference="3Ea-oG-6QZ"/>
-                    <include reference="3UO-ZC-Jze"/>
-                    <include reference="61c-Qw-t8y"/>
-                    <include reference="zLj-zZ-6OT"/>
                 </mask>
             </variation>
         </view>

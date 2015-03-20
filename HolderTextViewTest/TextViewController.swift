@@ -18,22 +18,17 @@ class TextViewController: UIViewController {
         holderTextView.placeHolder = "阿迪发送到发送到"
         holderTextView.maxLength = 8
         holderTextView.font = UIFont.systemFontOfSize(20)
+        holderTextView.holderTextViewDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension TextViewController : HolderTextViewDelegate{
+    func holderTextViewDidChange(textView:HolderTextView){
+        println("\(textView)")
     }
-    */
-
 }
