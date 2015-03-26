@@ -1,0 +1,4 @@
+# HolderTextView
+自带PlaceHolder和字数限制的一个TextView
+
+会根据自己实际使用需求增加新功能
