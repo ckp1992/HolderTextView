@@ -35,17 +35,18 @@ class HolderTextView: UITextView {
     //针对语音输入和直接赋值 或者用 kvo实现
     override var text: String! {
         didSet{
-            if text.isEmpty {
-                placeHolderView.hidden = false
-            }else{
-                placeHolderView.hidden = true
-            }
-            
-            var toBeString = text as NSString
-            
-            if (toBeString.length > maxLength) {
-                text = toBeString.substringToIndex(maxLength)
-            }
+            limitTextLength(self)
+//            if text.isEmpty {
+//                placeHolderView.hidden = false
+//            }else{
+//                placeHolderView.hidden = true
+//            }
+//            
+//            var toBeString = text as NSString
+//            
+//            if (toBeString.length > maxLength) {
+//                text = toBeString.substringToIndex(maxLength)
+//            }
         }
     }
     
@@ -77,12 +78,8 @@ extension HolderTextView {
         self.addSubview(placeHolderView)
         
     }
-}
-
-//MARK: -Notifications
-extension HolderTextView:UITextViewDelegate{
-    func textViewDidChange(textView: UITextView){
-        
+    
+    private func limitTextLength(textView: UITextView){
         if textView.text.isEmpty {
             placeHolderView.hidden = false
         }else{
@@ -94,8 +91,20 @@ extension HolderTextView:UITextViewDelegate{
         if (toBeString.length > maxLength) {
             textView.text = toBeString.substringToIndex(maxLength)
         }
+    }
+}
+
+//MARK: -Notifications
+extension HolderTextView:UITextViewDelegate{
+    func textViewDidChange(textView: UITextView){
+        limitTextLength(textView)
         holderTextViewDelegate?.holderTextViewDidChange!(textView as HolderTextView)
-        //holderTextViewDidChange(textView)
     }
     
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool{
+        if (textView.text as NSString).length >= maxLength && range.length == 0 { //是输入模式，并且等于最大字数
+            return false
+        }
+        return true
+    }
 }

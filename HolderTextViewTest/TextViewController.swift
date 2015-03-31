@@ -16,7 +16,7 @@ class TextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         holderTextView.placeHolder = "阿迪发送到发送到"
-        holderTextView.maxLength = 8
+        holderTextView.maxLength = 1
         holderTextView.font = UIFont.systemFontOfSize(20)
         holderTextView.holderTextViewDelegate = self
     }
@@ -29,6 +29,6 @@ class TextViewController: UIViewController {
 
 extension TextViewController : HolderTextViewDelegate{
     func holderTextViewDidChange(textView:HolderTextView){
-        println("\(textView)")
+//        println("\(textView)")
     }
 }
