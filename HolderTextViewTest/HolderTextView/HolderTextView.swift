@@ -33,6 +33,13 @@ class HolderTextView: UITextView {
         }
     }
     
+    //针对语音输入或者直接赋值
+    override var text: String! {
+        didSet{
+            self.textViewDidChange(self)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         initPlacHolderView()
