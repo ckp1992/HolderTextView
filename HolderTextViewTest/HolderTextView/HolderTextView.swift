@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol HolderTextViewDelegate {
     optional func holderTextViewDidChange(textView:HolderTextView)
+    optional func returnButtonDidClick(textView:HolderTextView)
 }
 
 class HolderTextView: UITextView {
@@ -72,13 +73,15 @@ extension HolderTextView {
     private func limitTextLength(textView: UITextView){
         
         var toBeString = textView.text as NSString
+        println("tobeString：\(toBeString)")
+        
         if (toBeString.length > maxLength) {
             textView.text = toBeString.substringToIndex(maxLength)
         }
     }
 }
 
-//MARK: -Notifications
+//MARK: -UITextViewDelegate
 extension HolderTextView:UITextViewDelegate{
     func textViewDidChange(textView: UITextView){
         if textView.text.isEmpty {
@@ -87,11 +90,9 @@ extension HolderTextView:UITextViewDelegate{
             placeHolderView.hidden = true
         }
         var language = textView.textInputMode?.primaryLanguage
-        println("language:\(language)")
+        //        FLOG("language:\(language)")
         if let lang = language {
             if lang == "zh-Hans" ||  lang == "zh-Hant" || lang == "ja-JP"{ //如果是中文简体,或者繁体输入,或者是日文这种带默认带高亮的输入法
-                
-                //获取高亮部分
                 var selectedRange = textView.markedTextRange
                 var position : UITextPosition?
                 if let range = selectedRange {
@@ -99,7 +100,7 @@ extension HolderTextView:UITextViewDelegate{
                 }
                 //系统默认中文输入法会导致英文高亮部分进入输入统计，对输入完成的时候进行字数统计
                 if position == nil {
-                    println("没有高亮，输入完毕")
+                    //                    FLOG("没有高亮，输入完毕")
                     limitTextLength(textView)
                     self.holderTextViewDelegate?.holderTextViewDidChange!(textView as HolderTextView)
                 }
@@ -108,5 +109,15 @@ extension HolderTextView:UITextViewDelegate{
                 self.holderTextViewDelegate?.holderTextViewDidChange!(textView as HolderTextView)
             }
         }
+        
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool{
+        println("text:,range：\(text),\(range)")
+        if text == "\n" {
+            self.holderTextViewDelegate?.returnButtonDidClick!(textView as HolderTextView)
+            return false
+        }
+        return true
     }
 }
