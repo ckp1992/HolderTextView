@@ -102,11 +102,11 @@ extension HolderTextView:UITextViewDelegate{
                 if position == nil {
                     //                    FLOG("没有高亮，输入完毕")
                     limitTextLength(textView)
-                    self.holderTextViewDelegate?.holderTextViewDidChange!(textView as HolderTextView)
+                    self.holderTextViewDelegate?.holderTextViewDidChange!(textView as! HolderTextView)
                 }
             }else{//非中文输入法
                 limitTextLength(textView)
-                self.holderTextViewDelegate?.holderTextViewDidChange!(textView as HolderTextView)
+                self.holderTextViewDelegate?.holderTextViewDidChange!(textView as! HolderTextView)
             }
         }
         
@@ -115,7 +115,7 @@ extension HolderTextView:UITextViewDelegate{
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool{
         println("text:,range：\(text),\(range)")
         if text == "\n" {
-            self.holderTextViewDelegate?.returnButtonDidClick!(textView as HolderTextView)
+            self.holderTextViewDelegate?.returnButtonDidClick!(textView as! HolderTextView)
             return false
         }
         return true
