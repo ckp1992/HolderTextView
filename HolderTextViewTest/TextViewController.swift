@@ -29,6 +29,10 @@ class TextViewController: UIViewController {
 
 extension TextViewController : HolderTextViewDelegate{
     func holderTextViewDidChange(textView:HolderTextView){
-//        println("\(textView)")
+        println("\(textView)")
+    }
+    
+    func returnButtonDidClick(textView:HolderTextView){
+        
     }
 }
