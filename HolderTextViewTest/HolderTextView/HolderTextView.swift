@@ -26,9 +26,9 @@ class HolderTextView: UITextView {
         }
     }
     
-    override var font: UIFont! {
+    override var font: UIFont? {
         didSet{
-            if let holderView = placeHolderView {
+            if let _ = placeHolderView {
                 placeHolderView.font = font
             }
         }
@@ -72,8 +72,8 @@ extension HolderTextView {
     
     private func limitTextLength(textView: UITextView){
         
-        var toBeString = textView.text as NSString
-        println("tobeString：\(toBeString)")
+        let toBeString = textView.text as NSString
+        print("tobeString：\(toBeString)")
         
         if (toBeString.length > maxLength) {
             textView.text = toBeString.substringToIndex(maxLength)
@@ -89,11 +89,11 @@ extension HolderTextView:UITextViewDelegate{
         }else{
             placeHolderView.hidden = true
         }
-        var language = textView.textInputMode?.primaryLanguage
+        let language = textView.textInputMode?.primaryLanguage
         //        FLOG("language:\(language)")
         if let lang = language {
             if lang == "zh-Hans" ||  lang == "zh-Hant" || lang == "ja-JP"{ //如果是中文简体,或者繁体输入,或者是日文这种带默认带高亮的输入法
-                var selectedRange = textView.markedTextRange
+                let selectedRange = textView.markedTextRange
                 var position : UITextPosition?
                 if let range = selectedRange {
                     position = textView.positionFromPosition(range.start, offset: 0)

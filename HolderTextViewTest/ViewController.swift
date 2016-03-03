@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func click(sender: AnyObject) {
-        var vc = TextViewController(nibName: "TextViewController", bundle: nil)
+        let vc = TextViewController(nibName: "TextViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
